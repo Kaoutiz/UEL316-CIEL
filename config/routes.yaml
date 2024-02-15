@@ -3,3 +3,23 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+categories:
+    path: /categories
+    controller: App\Controller\CategoriesController::index
+produits:
+    path: /produits
+    controller: App\Controller\ProduitsController::index
+app_produits_edit:
+    path: /produits/{slug}/edit
+    controller: App\Controller\ProduitsController::edit
+    methods: ['GET', 'POST']   
+app_produits_delete:
+    path: /produit/{slug}
+    controller: App\Controller\ProduitsController::delete
+    methods: ['POST']
+index_redirect:
+    path: /
+    controller: App\Controller\RedirectController::indexRedirect
+home_redirect:
+    path: /admin
+    controller: App\Controller\RedirectController::homeRedirect
