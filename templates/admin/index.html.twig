@@ -1,0 +1,30 @@
+{% extends '@EasyAdmin/page/content.html.twig' %}
+
+{% block main %}
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Les trois derniers posts</h2>
+            <ul>
+                {% for categorie in categories %}
+                    <li>{{ categorie.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>Les trois derniers commentaires</h2>
+            <ul>
+                {% for produit in produits %}
+                    <li>{{ produit.nom }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>Les trois derniers utilisateurs inscrits</h2>
+            <ul>
+                {% for user in users %}
+                    <li>{{ user.email }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

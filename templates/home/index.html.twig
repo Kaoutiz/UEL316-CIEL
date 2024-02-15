@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<div class="container mt-2">
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-column">
+            <h1 class="text-center">Bienvenue !</h1> 
+            <div class="d-flex justify-content-between">
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="/admin" class="text-center me-2"><button type="button" class="btn btn-warning">Pannel d'administration</button></a>
+                {% endif %}
+                <a href="/logout" class="text-center m-auto"><button type="button" class="btn btn-danger">Se déconnecté</button></a> 
+            </div>
+            <span class="text-center">{{ app.user.email }}</span>
+            <div class="d-flex mt-2 justify-content-between mt-4" id="nav_home">
+                <a href="/produits"><button type="button" class="btn btn-primary">Produits</button></a>
+                <a href="/categories"><button type="button" class="btn btn-success">Catégories</button></a>
+                <a href="/user"><button type="button" class="btn btn-warning">Utilisateurs</button></a>
+            </div>
+        </div>
+    </div>
+    <a href="/mentions/legales">Mention legales</a>
+</div>
+{% endblock %}

@@ -20,5 +20,9 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
 
+    App\EventListener\PostListener:
+            tags:
+                - { name: 'kernel.event_listener', event: 'doctrine.orm.pre_flush' }
+    App\Entity\Produits: ~
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
